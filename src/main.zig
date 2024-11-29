@@ -18,7 +18,7 @@ pub fn main() !void {
     defer allocator.free(errbuf);
 
     if (pcap.pcap_init(pcap.PCAP_CHAR_ENC_LOCAL, c_errbuf) != 0) {
-        std.debug.print("LIBPCAP(init) ERRROR: {s}\n", .{c_errbuf});
+        std.debug.print("LIBPCAP(init) ERROR: {s}\n", .{c_errbuf});
         return error.PcapError;
     }
 
